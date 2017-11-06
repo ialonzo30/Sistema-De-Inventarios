@@ -2,18 +2,18 @@ package Controlador;
 
 import Modelo.ConsultasProveedor;
 import Modelo.proveedor;
-import Vista.frmProducto;
+import Vista.frmProveedor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
-public class CtrlProducto implements ActionListener {
+public class CtrlProveedor implements ActionListener {
 
     private proveedor mod;
     private ConsultasProveedor modC;
-    private frmProducto frm;
+    private frmProveedor frm;
 
-    public CtrlProducto(proveedor mod, ConsultasProveedor modC, frmProducto frm) {
+    public CtrlProveedor(proveedor mod, ConsultasProveedor modC, frmProveedor frm) {
         this.mod = mod;
         this.modC = modC;
         this.frm = frm;
