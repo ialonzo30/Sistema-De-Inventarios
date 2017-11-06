@@ -66,7 +66,7 @@ public class CtrlProveedor implements ActionListener {
         }
         
         if (e.getSource() == frm.btnEliminar) {
-            mod.setNit(frm.txtId.getText());
+            mod.setNit(frm.txtNIT.getText());
             
             if(modC.eliminar(mod))
             {

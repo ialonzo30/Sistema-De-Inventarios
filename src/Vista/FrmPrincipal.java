@@ -5,9 +5,13 @@
  */
 package Vista;
 
+import Controlador.CtrlProveedor;
 import Controlador.CtrlUnidadDeMedida;
+import Modelo.ConsultasProveedor;
 import Modelo.UnidadDeMedida;
 import Modelo.UnidadDeMedidaSQL;
+import Modelo.proveedor;
+
 
 /**
  *
@@ -62,6 +66,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenu1.add(MnuClientes);
 
         MnuProveedores.setText("Proveedores");
+        MnuProveedores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnuProveedoresActionPerformed(evt);
+            }
+        });
         jMenu1.add(MnuProveedores);
 
         jMenuBar1.add(jMenu1);
@@ -91,7 +100,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mnuUnidadesDeMedidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuUnidadesDeMedidaActionPerformed
-        UnidadDeMedida um = new UnidadDeMedida();
+       UnidadDeMedida um = new UnidadDeMedida();
         UnidadDeMedidaSQL modC = new UnidadDeMedidaSQL();
         FrmUnidadDeMedida frm = new FrmUnidadDeMedida();
         
@@ -103,6 +112,16 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void MnuSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MnuSalirMouseClicked
         System.exit(0);
     }//GEN-LAST:event_MnuSalirMouseClicked
+
+    private void MnuProveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnuProveedoresActionPerformed
+       Modelo.proveedor pro = new proveedor();
+        Modelo.ConsultasProveedor modC = new ConsultasProveedor();
+        frmProveedor frm = new frmProveedor();
+        
+        Controlador.CtrlProveedor ctrl = new CtrlProveedor(pro, modC, frm);
+        ctrl.iniciar();
+        frm.setVisible(true);
+    }//GEN-LAST:event_MnuProveedoresActionPerformed
 
     /**
      * @param args the command line arguments
