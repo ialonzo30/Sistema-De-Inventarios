@@ -20,7 +20,7 @@ public class Conexion {
     */
      private final String base = "inventarios";
     private final String user = "root";
-    private final String password = "root";
+    private final String password = "";
     private final String url = "jdbc:mysql://localhost:3306/"+base;
     private Connection con = null;
     
