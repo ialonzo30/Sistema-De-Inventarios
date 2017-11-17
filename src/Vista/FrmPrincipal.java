@@ -6,8 +6,11 @@
 package Vista;
 
 import Controlador.CtrlProveedor;
+import Controlador.CtrlTiposDeMovimiento;
 import Controlador.CtrlUnidadDeMedida;
 import Modelo.ConsultasProveedor;
+import Modelo.TiposDeMovimiento;
+import Modelo.TiposDeMovimientoSQL;
 import Modelo.UnidadDeMedida;
 import Modelo.UnidadDeMedidaSQL;
 import Modelo.proveedor;
@@ -43,6 +46,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         mnuUnidadesDeMedida = new javax.swing.JMenuItem();
         MnuClientes = new javax.swing.JMenuItem();
         MnuProveedores = new javax.swing.JMenuItem();
+        MnuTiposdeMovimiento = new javax.swing.JMenuItem();
         MnuSalir = new javax.swing.JMenu();
 
         jMenuItem2.setText("jMenuItem2");
@@ -72,6 +76,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu1.add(MnuProveedores);
+
+        MnuTiposdeMovimiento.setText("Tipos de Movimientos");
+        MnuTiposdeMovimiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnuTiposdeMovimientoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(MnuTiposdeMovimiento);
 
         jMenuBar1.add(jMenu1);
 
@@ -123,6 +135,17 @@ public class FrmPrincipal extends javax.swing.JFrame {
         frm.setVisible(true);
     }//GEN-LAST:event_MnuProveedoresActionPerformed
 
+    private void MnuTiposdeMovimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnuTiposdeMovimientoActionPerformed
+        // TODO add your handling code here:
+        TiposDeMovimiento tdm = new TiposDeMovimiento();
+        TiposDeMovimientoSQL modC = new TiposDeMovimientoSQL();
+        FrmTiposDeMovimiento frm = new FrmTiposDeMovimiento();
+
+        CtrlTiposDeMovimiento ctrl = new CtrlTiposDeMovimiento(tdm, modC, frm);
+        ctrl.Iniciar();
+        frm.setVisible(true);
+    }//GEN-LAST:event_MnuTiposdeMovimientoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -162,6 +185,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem MnuClientes;
     private javax.swing.JMenuItem MnuProveedores;
     private javax.swing.JMenu MnuSalir;
+    private javax.swing.JMenuItem MnuTiposdeMovimiento;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
