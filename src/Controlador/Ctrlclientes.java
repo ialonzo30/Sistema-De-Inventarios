@@ -3,7 +3,7 @@ package Controlador;
 
 import Modelo.ConsultasClientes;
 import Modelo.clientes;
-import Vista.frmclientes;
+import Vista.frmclientes1;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -12,8 +12,8 @@ import javax.swing.JOptionPane;
 public class Ctrlclientes implements ActionListener{
 private clientes mod;
 private ConsultasClientes modC;
-private frmclientes frm;
-public Ctrlclientes(clientes mod, ConsultasClientes modC, frmclientes frm){
+private frmclientes1 frm;
+public Ctrlclientes(clientes mod, ConsultasClientes modC, frmclientes1 frm){
     this.mod= mod;
         this.modC= modC;
         this.frm= frm;

@@ -8,12 +8,18 @@ package Vista;
 import Controlador.CtrlProveedor;
 import Controlador.CtrlTiposDeMovimiento;
 import Controlador.CtrlUnidadDeMedida;
+import Controlador.Ctrlclientes;
+import Modelo.ConsultasClientes;
 import Modelo.ConsultasProveedor;
 import Modelo.TiposDeMovimiento;
 import Modelo.TiposDeMovimientoSQL;
 import Modelo.UnidadDeMedida;
 import Modelo.UnidadDeMedidaSQL;
+import Modelo.clientes;
 import Modelo.proveedor;
+import Modelo.producto;
+import Modelo.Consultaproducto;
+import Controlador.Ctrlproducto;
 
 
 /**
@@ -42,11 +48,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        mnuProductos = new javax.swing.JMenuItem();
         mnuUnidadesDeMedida = new javax.swing.JMenuItem();
         MnuClientes = new javax.swing.JMenuItem();
         MnuProveedores = new javax.swing.JMenuItem();
         MnuTiposdeMovimiento = new javax.swing.JMenuItem();
+        mnuTransportista = new javax.swing.JMenuItem();
         MnuSalir = new javax.swing.JMenu();
 
         jMenuItem2.setText("jMenuItem2");
@@ -55,8 +62,13 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         jMenu1.setText("Maestros");
 
-        jMenuItem1.setText("Productos");
-        jMenu1.add(jMenuItem1);
+        mnuProductos.setText("Productos");
+        mnuProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuProductosActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnuProductos);
 
         mnuUnidadesDeMedida.setText("Unidades De Medida");
         mnuUnidadesDeMedida.addActionListener(new java.awt.event.ActionListener() {
@@ -67,6 +79,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenu1.add(mnuUnidadesDeMedida);
 
         MnuClientes.setText("Clientes");
+        MnuClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnuClientesActionPerformed(evt);
+            }
+        });
         jMenu1.add(MnuClientes);
 
         MnuProveedores.setText("Proveedores");
@@ -84,6 +101,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu1.add(MnuTiposdeMovimiento);
+
+        mnuTransportista.setText("Transportistas");
+        mnuTransportista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuTransportistaActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnuTransportista);
 
         jMenuBar1.add(jMenu1);
 
@@ -146,6 +171,30 @@ public class FrmPrincipal extends javax.swing.JFrame {
         frm.setVisible(true);
     }//GEN-LAST:event_MnuTiposdeMovimientoActionPerformed
 
+    private void mnuProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuProductosActionPerformed
+        producto prod = new producto();
+        Consultaproducto modC = new Consultaproducto();
+        Frmproducto frm = new Frmproducto();
+        
+        Ctrlproducto ctrl = new Ctrlproducto(prod, modC, frm);
+        ctrl.iniciar();
+        frm.setVisible(true);
+    }//GEN-LAST:event_mnuProductosActionPerformed
+
+    private void MnuClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnuClientesActionPerformed
+        clientes cl = new clientes();
+        ConsultasClientes modC = new ConsultasClientes();
+        frmclientes1 frm = new frmclientes1();
+        
+        Ctrlclientes ctrl = new Ctrlclientes(cl, modC, frm);
+        ctrl.Iniciar();
+        frm.setVisible(true);
+    }//GEN-LAST:event_MnuClientesActionPerformed
+
+    private void mnuTransportistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuTransportistaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnuTransportistaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -188,8 +237,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem MnuTiposdeMovimiento;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem mnuProductos;
+    private javax.swing.JMenuItem mnuTransportista;
     private javax.swing.JMenuItem mnuUnidadesDeMedida;
     // End of variables declaration//GEN-END:variables
 }
