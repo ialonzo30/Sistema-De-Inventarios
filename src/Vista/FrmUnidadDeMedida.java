@@ -442,4 +442,3 @@ PreparedStatement ps = null;
     public javax.swing.JTextField txtDescripcion;
     public javax.swing.JTextField txtUnidadDeMedida;
     // End of variables declaration//GEN-END:variables
-}
