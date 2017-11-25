@@ -65,7 +65,7 @@ public class FrmUnidadDeMedida extends javax.swing.JFrame {
             Object[]  filas = new Object[cantidadColumnas];
             
             for(int i=0; i < cantidadColumnas; i++){
-                filas[i] = rs.getObject(i + 1);                       
+                filas[i] = rs.getObject(i);                       
             }
             modelo.addRow(filas);    
         }    
@@ -322,7 +322,7 @@ public class FrmUnidadDeMedida extends javax.swing.JFrame {
          
          modelo.addRow(fila);
          
-            
+limpiar();            
             
         }catch(Exception ex){
             JOptionPane.showMessageDialog(null, "Error al Guardar");
@@ -381,11 +381,12 @@ PreparedStatement ps = null;
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al Eliminar Producto");
             System.out.println(ex.toString());
-        }        // TODO add your handling code here:
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-
+limpiar();
         // TODO add your handling code here:
     }//GEN-LAST:event_btnLimpiarActionPerformed
  private void limpiar() {
