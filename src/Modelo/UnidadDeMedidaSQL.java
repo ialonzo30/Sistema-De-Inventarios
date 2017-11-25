@@ -13,7 +13,7 @@ import java.sql.SQLException;
  * @author ialonzo
  */
 public class UnidadDeMedidaSQL extends Conexion{
-    public boolean Registrar(UnidadDeMedida um)
+   /*public boolean Registrar(UnidadDeMedida um)
     {
         PreparedStatement ps = null;
         Connection con = getConexion();
@@ -42,7 +42,7 @@ public class UnidadDeMedidaSQL extends Conexion{
             }
         }
     }
-    
+    */
      public boolean Modificar(UnidadDeMedida um)
     {
         PreparedStatement ps = null;
