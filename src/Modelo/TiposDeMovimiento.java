@@ -38,6 +38,8 @@ public class TiposDeMovimiento {
     public void setSigno(int signo) {
         this.signo = signo;
     }
+
+   
     
     
     

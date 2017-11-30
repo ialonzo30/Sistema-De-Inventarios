@@ -5,10 +5,10 @@
  */
 package Modelo;
 
-import com.mysql.jdbc.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 /**
  *
  * @author yulio_94
@@ -140,10 +140,29 @@ public class TiposDeMovimientoSQL extends Conexion{
             }
         }
     }
-       
-        
-
+     public ArrayList<TiposDeMovimiento> listaTiposdeMovimientos(String tipodemovimiento){
+            ArrayList listaMovimiento = new ArrayList();
+            //Persona persona = new Producto();
+            TiposDeMovimiento tp;
+            try{
+              com.mysql.jdbc.Connection con = getConexion();
+              PreparedStatement ps;                         
+                  ps = con.prepareStatement("SELECT tipodemovimiento, descripcion, signo FROM tipodemovimientos");
+               ResultSet rs = ps.executeQuery();
+              while (rs.next()){
+                        System.out.println("1");
+                    tp = new TiposDeMovimiento();
+                    tp.setTipodemovimiento(rs.getInt("tipodemovimiento"));
+                    tp.setDescripcion(rs.getString("descripcion"));
+                    tp.setSigno(rs.getInt("signo"));
+                    listaMovimiento.add(tp);                
+              } 
+            }catch(SQLException e){
+                System.err.println(e);
+            }  
+            return listaMovimiento;
     }
+   }
         
         
         
