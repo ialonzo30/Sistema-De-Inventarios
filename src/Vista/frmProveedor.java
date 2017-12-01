@@ -34,7 +34,7 @@ public class frmProveedor extends javax.swing.JFrame {
         btnBuscar = new javax.swing.JButton();
         txtId = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Nit");
 
